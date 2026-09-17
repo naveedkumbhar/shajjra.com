@@ -6,7 +6,11 @@
 [![Interactive Tree](https://img.shields.io/badge/Canvas_Tree-Interactive_Explorer-326CE5?style=for-the-badge&logo=d3.js&logoColor=white)](https://shajjra.com)
 [![Pedigree Charts](https://img.shields.io/badge/Pedigree_Charts-Ancestral_Lineage-8A2BE2?style=for-the-badge)](https://shajjra.com)
 [![Lineage Directory](https://img.shields.io/badge/Ancestral_Directory-1080+_Members-38BDF8?style=for-the-badge)](https://shajjra.com)
-[![Architect](https://img.shields.io/badge/Curator-Naveed_Kumbhar-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://naveedkumbhar.com)
+[![Curator Portfolio](https://img.shields.io/badge/Architect-naveedkumbhar.com-ff69b4?style=for-the-badge&logo=safari&logoColor=white)](https://naveedkumbhar.com)
+[![DevOps Practice Hub](https://img.shields.io/badge/Interview_Hub-interview.naveedkumbhar.com-00d26a?style=for-the-badge&logo=google-chrome&logoColor=white)](https://interview.naveedkumbhar.com)
+[![Kubernetes Mastery](https://img.shields.io/badge/K8s_Mastery-k8s.naveedkumbhar.com-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://k8s.naveedkumbhar.com)
+[![Engineering Blog](https://img.shields.io/badge/Tech_Blog-blog.naveedkumbhar.com-8A2BE2?style=for-the-badge)](https://blog.naveedkumbhar.com)
+[![Platform Dispatch](https://img.shields.io/badge/Newsletter-news.naveedkumbhar.com-38BDF8?style=for-the-badge&logo=mailgun&logoColor=white)](https://news.naveedkumbhar.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 ---
@@ -35,6 +39,22 @@ Experience the live platform and genealogical explorer:
 | 💍 **Marriage Registry** | [`shajjra.com/marriages`](https://shajjra.com) | Cross-branch marital connections, spouse biographies, and inter-clan alliances. |
 | 📖 **Ancestral Directory** | [`shajjra.com/directory`](https://shajjra.com) | Complete indexed directory organized alphabetically, by generation, and by branch color. |
 | 🎂 **Family Milestones** | [`shajjra.com/birthdays`](https://shajjra.com) | Community calendar tracking generational milestones and memorial dates. |
+
+---
+
+## 🌐 Naveed Kumbhar Digital & Engineering Ecosystem
+
+This genealogical archive is part of the open technology and cloud architecture network curated by **[Naveed Kumbhar](https://naveedkumbhar.com)**:
+
+| Platform | URL | Scope & Technical Focus |
+|:---|:---|:---|
+| 👨‍💻 **Primary Architect Hub** | [`naveedkumbhar.com`](https://naveedkumbhar.com) | Official portfolio of Naveed Kumbhar — Senior DevOps, Cloud & SRE Architect. |
+| 🧠 **DevOps Production Hub** | [`interview.naveedkumbhar.com`](https://interview.naveedkumbhar.com) | 950+ real-world production incident scenarios, diagnostic runbooks, and candidate storytelling models. |
+| ☸️ **Kubernetes Mastery** | [`k8s.naveedkumbhar.com`](https://k8s.naveedkumbhar.com) | 24 hands-on modules, interactive quizzes (70% pass gate), session tracking, and minikube sandboxes. |
+| 📝 **Engineering Deep Dives** | [`blog.naveedkumbhar.com`](https://blog.naveedkumbhar.com) | Production post-mortems, high-availability cluster designs, and modern infrastructure guides. |
+| ⚡ **The Platform Dispatch** | [`news.naveedkumbhar.com`](https://news.naveedkumbhar.com) | Free bi-weekly newsletter covering real production incidents, cloud architecture, and automation. |
+| 🧰 **DevOps Lab & Cloud Tools** | [`tools.naveedkumbhar.com`](https://tools.naveedkumbhar.com) | Interactive YAML validators, CIDR subnet calculators, and IAM security policy builders. |
+| 🌳 **Genealogy Digital Archive** | [`shajjra.com`](https://shajjra.com) | Flagship 45-generation living family tree archive and interactive genealogical canvas. |
 
 ---
 
@@ -132,7 +152,12 @@ Have records, historical documents, or lineage corrections for your branch?
 
 ---
 
-## 👨‍💻 Architect & Maintenance
+## 👨‍💻 Architect & Companion Projects
 
-Curated and engineered by **[Naveed Kumbhar](https://naveedkumbhar.com)**.  
-For inquiries, lineage additions, or API access, visit [shajjra.com](https://shajjra.com).
+Curated and engineered by **[Naveed Kumbhar](https://naveedkumbhar.com)**.
+
+### Related Open-Source Repositories & Handbooks
+- 🛠️ **[devops-production-interview-handbook](https://github.com/naveedkumbhar/devops-production-interview-handbook)**: 950+ real-world production incident scenarios across Kubernetes, AWS, Terraform, CI/CD, and Linux.
+- 🌳 **[shajjra.com](https://github.com/naveedkumbhar/shajjra.com)**: Digital genealogy archive and 45-generation ancestral tree specification.
+
+For inquiries, lineage additions, or API access, visit [shajjra.com](https://shajjra.com) or connect via [naveedkumbhar.com](https://naveedkumbhar.com).
