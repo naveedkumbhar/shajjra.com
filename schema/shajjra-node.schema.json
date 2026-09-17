@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shajjra.com/schemas/v1/shajjra-node.json",
+  "title": "ShajjraMemberNode",
+  "description": "Standardized genealogical node for Shajjra lineage graphs and tree visualization.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (UUID or sequential slug) for the family member."
+    },
+    "name": {
+      "type": "string",
+      "description": "Full formal name including customary titles or honorifics."
+    },
+    "nickname": {
+      "type": ["string", "null"],
+      "description": "Kunya, familiar title, or colloquial name."
+    },
+    "gender_id": {
+      "type": "integer",
+      "enum": [1, 2],
+      "description": "1 for Male, 2 for Female."
+    },
+    "father_id": {
+      "type": ["string", "null"],
+      "description": "Identifier of the patrilineal ancestor."
+    },
+    "mother_id": {
+      "type": ["string", "null"],
+      "description": "Identifier of the matrilineal ancestor."
+    },
+    "parent_id": {
+      "type": ["string", "null"],
+      "description": "Primary branch parent ID for single-parent tree traversal."
+    },
+    "birth_order": {
+      "type": ["integer", "null"],
+      "description": "Sequential sibling birth order (1 for firstborn)."
+    },
+    "generation": {
+      "type": ["integer", "null"],
+      "description": "Generation tier counted from root patriarch (e.g., 1 to 45)."
+    },
+    "yob": {
+      "type": ["integer", "null"],
+      "description": "Year of birth (approximate or historical CE)."
+    },
+    "yod": {
+      "type": ["integer", "null"],
+      "description": "Year of passing (CE) if deceased."
+    },
+    "text_color": {
+      "type": "string",
+      "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "default": "#ffffff",
+      "description": "Hex text color code for branch badge."
+    },
+    "bg_color": {
+      "type": "string",
+      "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "default": "#1a365d",
+      "description": "Hex background color code for branch lineage group."
+    },
+    "profile_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Canonical URL on shajjra.com for full biography."
+    }
+  },
+  "required": ["id", "name", "gender_id"]
+}

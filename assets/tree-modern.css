@@ -1,0 +1,236 @@
+/* ============================================================
+   Shajjra — Heritage Family Tree
+   Gold connectors, navy/ivory nodes, serif typography.
+   ============================================================ */
+
+.tree,
+.tree * { box-sizing: border-box; }
+
+.tree ul {
+    padding-top: 24px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+}
+
+.tree li {
+    float: left;
+    text-align: center;
+    position: relative;
+    padding: 24px 10px 0 10px;
+    list-style: none;
+}
+
+/* Connectors drawn with pseudo-elements */
+.tree li::before,
+.tree li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid rgb(201 162 39 / 0.55);
+    width: 50%;
+    height: 24px;
+}
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid rgb(201 162 39 / 0.55);
+}
+
+/* Single child — remove side connectors */
+.tree li:only-child::after,
+.tree li:only-child::before { display: none; }
+.tree li:only-child { padding-top: 0; }
+
+/* First/last child edge cleanup */
+.tree li:first-child::before,
+.tree li:last-child::after { border: 0 none; }
+.tree li:last-child::before {
+    border-right: 1px solid rgb(201 162 39 / 0.55);
+    border-radius: 0 4px 0 0;
+}
+.tree li:first-child::after { border-radius: 4px 0 0 0; }
+
+/* Vertical connector from parent down to children */
+.tree ul ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid rgb(201 162 39 / 0.55);
+    width: 0;
+    height: 24px;
+}
+
+/* The node itself */
+.tree-node {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 16px;
+    min-width: 120px;
+    border: 1px solid rgb(201 162 39 / 0.45);
+    border-top: 3px solid rgb(201 162 39 / 0.85);
+    background: #fdfbf5;
+    color: #0f2042;
+    font-family: "Lora", Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgb(201 162 39 / 0.15), 0 2px 10px -4px rgb(10 23 48 / 0.14);
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+.tree-node:hover {
+    background: #f5ebc6;
+    border-color: rgb(201 162 39 / 0.95);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 0 1px rgb(201 162 39 / 0.6), 0 12px 28px -6px rgb(10 23 48 / 0.22), 0 0 16px -2px rgb(201 162 39 / 0.25);
+}
+.tree-node-name { line-height: 1.2; }
+.tree-node-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgb(169 132 28 / 0.85);
+}
+
+/* The root / current person — highlighted in gold */
+.tree > ul > li > .tree-node,
+.tree-node.is-root {
+    background: linear-gradient(180deg, #c9a227 0%, #a9841c 100%);
+    color: #0a1730;
+    border: 1px solid #d4af37;
+    border-top: 3px solid #e6c757;
+    box-shadow: 0 0 0 1px rgb(212 175 55 / 0.5), 0 8px 24px -8px rgb(10 23 48 / 0.4);
+}
+.tree-node.is-root .tree-node-meta { color: rgb(10 23 48 / 0.7); }
+.tree-node.is-root:hover {
+    background: linear-gradient(180deg, #d4af37 0%, #c9a227 100%);
+}
+
+/* Gender chip on node */
+.tree-node-chip {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    display: grid;
+    place-items: center;
+    height: 18px;
+    width: 18px;
+    border-radius: 999px;
+    background: #0f2042;
+    color: #f5ebc6;
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    border: 1px solid rgb(201 162 39 / 0.6);
+}
+.tree-node.is-root .tree-node-chip {
+    background: #0a1730;
+    color: #d4af37;
+}
+
+/* Per-node dropdown menu (Alpine) */
+.tree-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    min-width: 140px;
+    background: #fdfbf5;
+    border: 1px solid rgb(201 162 39 / 0.45);
+    border-top: 3px solid rgb(201 162 39 / 0.85);
+    border-radius: 4px;
+    box-shadow: 0 8px 24px -8px rgb(10 23 48 / 0.3);
+    padding: 4px;
+    animation: dropdownFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translate(-50%, -6px) scale(0.96); }
+    to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+.tree-dropdown a {
+    display: block;
+    padding: 6px 10px;
+    font-family: "Lora", Georgia, serif;
+    font-size: 12px;
+    color: #0f2042;
+    text-decoration: none;
+    border-radius: 2px;
+    text-align: left;
+}
+.tree-dropdown a:hover { background: #f5ebc6; color: #5e4410; }
+.tree-dropdown a.danger { color: #b91c1c; }
+.tree-dropdown a.danger:hover { background: #fee2e2; }
+
+/* The whole tree scrolls horizontally on small screens */
+.tree-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 0 32px;
+    text-align: center;          /* centers the inline-block .tree when narrow */
+}
+.tree-scroll::-webkit-scrollbar { height: 10px; }
+.tree-scroll::-webkit-scrollbar-track { background: rgb(201 162 39 / 0.08); }
+.tree-scroll::-webkit-scrollbar-thumb { background: rgb(201 162 39 / 0.4); border-radius: 999px; }
+
+/* inline-block + min-width:100% lets .tree shrink-to-fit its content
+   (so the scroll container can reach every node) while still centering
+   narrow trees. Fixes the "left side cut off, can't scroll to it" bug. */
+.tree {
+    display: inline-block;
+    min-width: 100%;
+    text-align: left;
+    max-width: none;
+}
+
+/* Dark mode */
+.dark .tree-node {
+    background: #0f2042;
+    color: #fdfbf5;
+    border-color: rgb(201 162 39 / 0.4);
+    box-shadow: 0 1px 0 rgb(201 162 39 / 0.1), 0 2px 10px -4px rgb(0 0 0 / 0.4);
+}
+.dark .tree-node:hover { background: #152d57; }
+.dark .tree-node-chip { background: #d4af37; color: #0a1730; }
+.dark .tree-dropdown {
+    background: #0f2042;
+    border-color: rgb(201 162 39 / 0.4);
+}
+.dark .tree-dropdown a { color: #fdfbf5; }
+.dark .tree-dropdown a:hover { background: #152d57; color: #e6c757; }
+
+/* ============================================================
+   Floating Tree Explorer Toolbar & Zoom Canvas
+   ============================================================ */
+.tree-wrapper {
+    display: inline-block;
+    min-width: 100%;
+}
+
+.tree-floating-toolbar button {
+    cursor: pointer;
+}
+
+#tree-container:fullscreen {
+    padding: 2rem;
+    background: #fdfbf5;
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dark #tree-container:fullscreen {
+    background: #0a1730;
+}

@@ -1,0 +1,39 @@
+# ============================================================
+# Private Server Infrastructure, Access & Passwords
+# ============================================================
+HANDOFF_DOCUMENTATION.md
+.env
+.env.*
+*.pem
+*.key
+id_*
+
+# ============================================================
+# Internal SEO Audits, Crawl Runs & Artifacts
+# ============================================================
+runs/
+BEYONDSEO-*
+SEO_*
+SHAJRA_INFO_*
+*.html
+*.pdf
+submit-indexnow.*
+
+# ============================================================
+# Internal Backend Application Code (Kept Private on Production Server)
+# ============================================================
+/app/
+/resources/
+/routes/
+/public/
+*.blade.php
+functions.php
+
+# ============================================================
+# OS & Editor Artifacts
+# ============================================================
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
+*.log
